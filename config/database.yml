@@ -1,0 +1,8 @@
+test:
+  adapter: postgresql
+  host: localhost
+  encoding: utf8
+  database: restpack_core_service_test
+  pool: 5
+  username:
+  password:
