@@ -20,7 +20,7 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency "restpack_service",       "~> 0.0.27"
   spec.add_dependency "restpack_serializer",    "~> 0.4.1"
-  spec.add_dependency "restpack_gem",           "~> 0.0.9"
+  spec.add_dependency "restpack_gem",           "~> 0.0.10"
   spec.add_dependency "sinatra",                "~> 1.4.3"
   spec.add_dependency "pg",                     "~> 0.16"
 

@@ -1,6 +1,5 @@
 module RestPack::Core::Service
   class Configuration < RestPack::Service::Configuration
-    attr_accessor :application_id
 
   end
 
