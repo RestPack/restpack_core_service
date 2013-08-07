@@ -1,5 +1,6 @@
-module RestPack::Models
-  class Domain < ActiveRecord::Base
+module RestPack::Core::Service::Models
+  class Domain < Base
+    restpack_table_name :domains
     attr_accessible :host, :application
 
     validates_presence_of :host

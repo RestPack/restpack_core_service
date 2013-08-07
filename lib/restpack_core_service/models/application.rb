@@ -1,5 +1,6 @@
-module RestPack::Models
-  class Application < ActiveRecord::Base
+module RestPack::Core::Service::Models
+  class Application < Base
+    restpack_table_name :applications
     attr_accessible :name, :account_id
 
     validates_presence_of :name, :account_id
