@@ -18,6 +18,8 @@ FactoryGirl.find_definitions
 DatabaseCleaner.strategy = :transaction
 
 RSpec.configure do |config|
+  config.include FactoryGirl::Syntax::Methods
+
   config.before(:each) do
     DatabaseCleaner.start
   end
