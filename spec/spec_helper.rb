@@ -3,6 +3,7 @@ require 'rspec'
 require 'database_cleaner'
 require 'yaml'
 require 'shoulda-matchers'
+require 'factory_girl'
 require 'restpack_core_service'
 
 config = YAML.load_file('./config/database.yml')
@@ -11,6 +12,8 @@ ActiveRecord::Base.establish_connection(ENV['DATABASE_URL'] || config['test'])
 migrations_path = File.dirname(__FILE__) + "/../db/migrate"
 migrator = ActiveRecord::Migrator.new(:up, migrations_path)
 migrator.migrate
+
+FactoryGirl.find_definitions
 
 DatabaseCleaner.strategy = :transaction
 

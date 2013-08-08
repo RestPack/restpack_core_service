@@ -30,4 +30,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "rspec"
   spec.add_development_dependency "bump"
   spec.add_development_dependency "shoulda-matchers", "~> 1.4.2"
+  spec.add_development_dependency "factory_girl", "~> 4.0"
 end

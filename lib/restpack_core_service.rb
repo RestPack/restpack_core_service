@@ -11,3 +11,4 @@ require "restpack_core_service/models/domain"
 
 require "restpack_core_service/tasks"
 
+Models = RestPack::Core::Service::Models

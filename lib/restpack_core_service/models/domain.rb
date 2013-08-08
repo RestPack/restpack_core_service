@@ -1,10 +1,10 @@
 module RestPack::Core::Service::Models
   class Domain < Base
     restpack_table_name :domains
-    attr_accessible :name, :host
+    attr_accessible :identifier, :host
 
-    validates_presence_of :name
-    validates :name, :length => { :maximum => 512 }
+    validates_presence_of :identifier
+    validates :identifier, :length => { :maximum => 512 }
 
     belongs_to :host
   end

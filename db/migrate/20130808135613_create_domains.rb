@@ -5,7 +5,7 @@ class CreateDomains < ActiveRecord::Migration
 
   def change
     create_table table_name do |t|
-      t.string :name, :null => false, :limit => 512
+      t.string :identifier, :null => false, :limit => 512
       t.integer :host_id, :null => false
 
       t.timestamps
