@@ -7,5 +7,9 @@ module RestPack::Core::Service::Models
     validates :name, :length => { :maximum => 256 }
 
     has_many :hosts
+
+    before_save -> {
+      self.api_token ||= SecureRandom.hex(50)[0..31]
+    }
   end
 end
