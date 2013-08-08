@@ -5,7 +5,7 @@ class CreateApplications < ActiveRecord::Migration
 
   def change
     create_table table_name do |t|
-      t.string :name, :null => false, :limit => 256
+      t.string  :name, :null => false, :limit => 256
       t.integer :account_id, :null => false
 
       t.timestamps
