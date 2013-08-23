@@ -9,6 +9,9 @@ require "restpack_core_service/models/application"
 require "restpack_core_service/models/host"
 require "restpack_core_service/models/domain"
 
+require "restpack_core_service/services"
 require "restpack_core_service/tasks"
 
 Models = RestPack::Core::Service::Models
+Commands = RestPack::Core::Service::Commands
+# Serializers = RestPack::Core::Service::Serializers

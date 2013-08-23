@@ -18,9 +18,9 @@ Gem::Specification.new do |spec|
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ["lib"]
 
-  spec.add_dependency "restpack_service"#,       "~> 0.0.28"
-  spec.add_dependency "restpack_serializer"#,    "~> 0.4.1"
-  spec.add_dependency "restpack_gem"#,           "~> 0.0.11"
+  spec.add_dependency "restpack_service"
+  spec.add_dependency "restpack_serializer"
+  spec.add_dependency "restpack_gem"
   spec.add_dependency "sinatra",                "~> 1.4.3"
   spec.add_dependency "pg",                     "~> 0.16"
 
