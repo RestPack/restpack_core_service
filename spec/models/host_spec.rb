@@ -18,5 +18,9 @@ describe RestPack::Core::Service::Models::Host do
     it "has empty oauth_providers as default" do
       create(:host).oauth_providers.should == {}
     end
+
+    it "is not verified" do
+      create(:host).is_verified.should == false
+    end
   end
 end

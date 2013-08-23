@@ -4,6 +4,7 @@ class CreateHosts < ActiveRecord::Migration
       t.string  :name, :null => false, :limit => 256
       t.integer :application_id, :null => false
       t.string  :session_secret, :null => false, :limit => 128
+      t.boolean :is_verified, :null => false, :default => false
       t.json    :oauth_providers, :null => false
 
       t.timestamps
