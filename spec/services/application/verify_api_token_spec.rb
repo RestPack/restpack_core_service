@@ -17,7 +17,7 @@ describe Commands::Application::VerifyApiToken do
 
     it 'is valid' do
       response.success?.should == true
-      response.result.should == {}
+      response.result.should == { id: @application.id }
     end
   end
 

@@ -11,7 +11,11 @@ module RestPack::Core::Service::Commands::Application
         inputs[:api_token]
       )
 
-      status :forbidden if !application
+      if application
+        { id: application.id }
+      else
+        status :forbidden
+      end
     end
   end
 end
