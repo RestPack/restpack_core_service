@@ -1,6 +1,6 @@
 module RestPack::Core::Service::Models
-  class Application < Base
-    restpack_table_name :applications
+  class Application < ActiveRecord::Base
+    self.table_name = :restpack_applications
     attr_accessible :name, :account_id
 
     validates_presence_of :name, :account_id

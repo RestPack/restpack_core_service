@@ -1,6 +1,6 @@
 module RestPack::Core::Service::Models
-  class Domain < Base
-    restpack_table_name :domains
+  class Domain < ActiveRecord::Base
+    self.table_name = :restpack_domains
     attr_accessible :identifier, :host
 
     validates_presence_of :identifier

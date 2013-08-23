@@ -1,6 +1,6 @@
 module RestPack::Core::Service::Models
-  class Host < Base
-    restpack_table_name :hosts
+  class Host < ActiveRecord::Base
+    self.table_name = :restpack_hosts
     attr_accessible :name, :application_id, :session_secret, :oauth_providers
 
     validates_presence_of :name, :application_id
