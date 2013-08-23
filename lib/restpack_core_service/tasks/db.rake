@@ -33,7 +33,7 @@ namespace :restpack do
     task :configuration do
       p "RestPack::Core::Service Configuration"
       p "--------------------------------"
-      p "database_table_prefix: #{RestPack::Core::Service.config.db_table_prefix}"
+      p "db_table_prefix: #{RestPack::Core::Service.config.db_table_prefix}"
     end
   end
 end
