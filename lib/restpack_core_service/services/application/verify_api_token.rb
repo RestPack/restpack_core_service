@@ -6,7 +6,7 @@ module RestPack::Core::Service::Commands::Application
     end
 
     def execute
-      application = Models::Application.find_by_id_and_api_token(
+      application = Core::Models::Application.find_by_id_and_api_token(
         inputs[:id],
         inputs[:api_token]
       )
