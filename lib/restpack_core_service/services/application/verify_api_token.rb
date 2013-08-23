@@ -6,16 +6,12 @@ module RestPack::Core::Service::Commands::Application
     end
 
     def execute
-      # activity = Models::Activity.find_by_id_and_application_id(
-      #   inputs[:id],
-      #   inputs[:application_id]
-      # )
+      application = Models::Application.find_by_id_and_api_token(
+        inputs[:id],
+        inputs[:api_token]
+      )
 
-      # if activity
-      #   Serializers::ActivitySerializer.as_json(activity)
-      # else
-      #   status :not_found
-      # end
+      status :forbidden if !application
     end
   end
 end
