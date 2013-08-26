@@ -1,11 +1,13 @@
-# module RestPack::Core::Service::Serializers
-#   class UserSerializer
-#     include RestPack::Serializer
+module RestPack::Core::Service::Serializers
+  class DomainSerializer
+    include RestPack::Serializer
 
-#     self.model_class = RestPack::User::Service::Models::User
-#     self.key = :users
+    self.model_class = RestPack::Core::Service::Models::Domain
+    self.key = :domains
 
-#     # attributes :id, :application_id, :user_id, :title, :content, :latitude, :longitude,
-#     #            :tags, :access, :data, :href, :updated_at, :created_at
-#   end
-# end
+    attributes :id, :identifier, :application_id, :is_verified, :session_secret,
+               :oauth_providers
+
+    can_include :application
+  end
+end
