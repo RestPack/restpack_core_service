@@ -2,6 +2,9 @@ module RestPack::Core::Service::Commands::Domain
   class ByIdentifier < RestPack::Service::Command
     required do
       string :identifier
+    end
+
+    optional do
       string :includes
     end
 

@@ -2,6 +2,7 @@ require_relative '../../spec_helper'
 
 describe Core::Commands::Domain::ByIdentifier do
   is_required :identifier
+  is_optional :includes
 
   let(:response) { subject.class.run(params) }
 
@@ -29,29 +30,15 @@ describe Core::Commands::Domain::ByIdentifier do
     end
   end
 
-  # context 'with invalid :id' do
-  #   let(:params) { {
-  #     id: 142857,
-  #     api_token: @application.api_token
-  #   }}
+  context 'with invalid :identifier' do
+    let(:params) { {
+      identifier: 'invalid'
+    }}
 
-  #   it 'is forbidden' do
-  #     response.success?.should == false
-  #     response.result.should == {}
-  #     response.status.should == :forbidden
-  #   end
-  # end
-
-  # context 'with invalid :api_token' do
-  #   let(:params) { {
-  #     id: @application.id,
-  #     api_token: 'invalid_token'
-  #   }}
-
-  #   it 'is forbidden' do
-  #     response.success?.should == false
-  #     response.result.should == {}
-  #     response.status.should == :forbidden
-  #   end
-  # end
+    it 'is :not_found' do
+      response.success?.should == false
+      response.result.should == {}
+      response.status.should == :not_found
+    end
+  end
 end
