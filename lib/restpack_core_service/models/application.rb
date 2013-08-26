@@ -6,7 +6,7 @@ module RestPack::Core::Service::Models
     validates_presence_of :name, :account_id
     validates :name, :length => { :maximum => 256 }
 
-    has_many :domains
+    has_many :domains, class_name: 'RestPack::Core::Service::Models::Domain'
 
     before_save -> {
       self.api_token ||= SecureRandom.hex(50)[0..31]
