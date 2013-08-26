@@ -6,7 +6,7 @@ module RestPack::Core::Service::Models
     validates_presence_of :identifier, :application_id
     validates :identifier, :length => { :maximum => 512 }
 
-    belongs_to :application, class_name: 'RestPack::Core::Service::Models::Application'
+    belongs_to :application
 
     before_save -> {
       self.oauth_providers ||= {}
