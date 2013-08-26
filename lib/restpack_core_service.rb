@@ -6,7 +6,6 @@ require "restpack_core_service/version"
 require "restpack_core_service/configuration"
 
 require "restpack_core_service/models/application"
-require "restpack_core_service/models/host"
 require "restpack_core_service/models/domain"
 
 require "restpack_core_service/services"
