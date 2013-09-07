@@ -5,12 +5,6 @@ module RestPack::Core::Service::Serializers
     self.model_class = RestPack::Core::Service::Models::Application
     self.key = :applications
 
-    attributes :id
+    attributes :id, :name, :account_id
   end
-end
-
-#TODO: GJ:  remove once this has been addressed:
-#           https://github.com/RestPack/restpack_serializer/issues/41
-class ApplicationSerializer < RestPack::Core::Service::Serializers::ApplicationSerializer
-
 end

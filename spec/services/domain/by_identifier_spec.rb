@@ -13,7 +13,7 @@ describe Core::Commands::Domain::ByIdentifier do
   context 'with valid params' do
     let(:params) { {
       identifier: @domain.identifier,
-      includes: 'application'
+      includes: 'applications'
     } }
 
     it 'is valid' do
@@ -27,6 +27,7 @@ describe Core::Commands::Domain::ByIdentifier do
 
     it 'includes related application' do
       response.result[:applications].length.should == 1
+      response.result[:applications].first[:id].should == @domain.application_id.to_s
     end
   end
 

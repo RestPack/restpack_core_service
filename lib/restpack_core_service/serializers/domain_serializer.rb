@@ -8,6 +8,6 @@ module RestPack::Core::Service::Serializers
     attributes :id, :identifier, :application_id, :is_verified, :session_secret,
                :oauth_providers
 
-    can_include :application
+    can_include :applications
   end
 end
