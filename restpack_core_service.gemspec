@@ -21,6 +21,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency "restpack_service"
   spec.add_dependency "restpack_serializer"
   spec.add_dependency "restpack_gem"
+  spec.add_dependency "public_suffix",          "~> 1.3.1"
   spec.add_dependency "sinatra",                "~> 1.4.3"
   spec.add_dependency "pg",                     "~> 0.16"
 

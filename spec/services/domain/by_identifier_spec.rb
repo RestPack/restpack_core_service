@@ -29,6 +29,17 @@ describe Core::Commands::Domain::ByIdentifier do
       response.result[:applications].length.should == 1
       response.result[:applications].first[:id].should == @domain.application_id.to_s
     end
+
+    context 'with subdomain in identifier' do
+      let(:params) { {
+        identifier: "www.#{@domain.identifier}",
+        includes: 'applications'
+      } }
+
+      it 'is valid' do
+        response.success?.should == true
+      end
+    end
   end
 
   context 'with invalid :identifier' do

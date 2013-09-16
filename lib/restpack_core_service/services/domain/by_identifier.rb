@@ -1,3 +1,5 @@
+require 'public_suffix'
+
 module RestPack::Core::Service::Commands::Domain
   class ByIdentifier < RestPack::Service::Command
     required do
@@ -9,15 +11,32 @@ module RestPack::Core::Service::Commands::Domain
     end
 
     def execute
-      result = Core::Serializers::DomainSerializer.resource(
-        inputs,
-        Core::Models::Domain.where(identifier: inputs[:identifier])
-      )
+      identifiers = [
+        inputs[:identifier],
+        get_domain(identifier)
+      ]
 
-      if result[:domains].any?
-        result
-      else
-        status :not_found
+      identifiers.reject(&:nil?).each do |identifier|
+        result = Core::Serializers::DomainSerializer.resource(
+          inputs,
+          Core::Models::Domain.where(identifier: identifier)
+        )
+
+        if result[:domains].any?
+          return result
+        end
+      end
+
+      status :not_found
+    end
+
+    private
+
+    def get_domain(identifier)
+      begin
+        PublicSuffix.parse(identifier).domain
+      rescue
+        nil
       end
     end
   end
