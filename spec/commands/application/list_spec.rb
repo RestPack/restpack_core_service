@@ -16,14 +16,14 @@ describe RestPack::Core::Service::Commands::Application::List do
 
       context 'valid' do
         let(:params) { { account_id: 142857 } }
-        it 'returns applications' do
+        it 'returns correct applications' do
           response.result[:meta][:applications][:count].should == 3
         end
       end
 
       context 'invalid' do
         let(:params) { { account_id: 999999 } }
-        it 'returns no groups' do
+        it 'returns no applications' do
           response.result[:meta][:applications][:count].should == 0
         end
       end
