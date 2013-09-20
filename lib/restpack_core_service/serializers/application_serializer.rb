@@ -6,5 +6,7 @@ module RestPack::Core::Service::Serializers
     self.key = :applications
 
     attributes :id, :name, :account_id
+
+    can_include :domains
   end
 end

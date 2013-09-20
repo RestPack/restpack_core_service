@@ -8,6 +8,7 @@ module RestPack::Core::Service::Commands
       optional do
         integer :page
         integer :page_size
+        string :includes
       end
 
       def execute
