@@ -9,5 +9,6 @@ module RestPack::Core::Service::Serializers
                :session_secret, :oauth_providers
 
     can_include :applications
+    can_filter_by :application_id
   end
 end

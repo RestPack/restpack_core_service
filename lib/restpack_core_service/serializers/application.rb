@@ -8,5 +8,6 @@ module RestPack::Core::Service::Serializers
     attributes :id, :name, :account_id
 
     can_include :domains
+    can_filter_by :account_id
   end
 end

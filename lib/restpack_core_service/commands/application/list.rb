@@ -12,12 +12,7 @@ module RestPack::Core::Service::Commands
       end
 
       def execute
-        # TODO: GJ: remove the scope when we can specify custom serializer filters
-        #           https://github.com/RestPack/restpack_serializer/issues/42
-        scope = Models::Application.all
-        scope = scope.where(account_id: account_id)
-
-        Serializers::Application.resource(inputs, scope)
+        Serializers::Application.resource(inputs)
       end
     end
   end

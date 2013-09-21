@@ -7,12 +7,7 @@ module RestPack::Core::Service::Commands
       end
 
       def execute
-        # TODO: GJ: remove the :account_id scope when we can specify custom serializer filters
-        #          https://github.com/RestPack/restpack_serializer/issues/42
-        result = Serializers::Application.resource(
-          inputs,
-          Models::Application.where(account_id: account_id)
-        )
+        result = Serializers::Application.resource(inputs)
 
         if result[:applications].empty?
           status :not_found
