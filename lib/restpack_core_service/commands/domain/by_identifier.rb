@@ -18,9 +18,9 @@ module RestPack::Core::Service::Commands
         ]
 
         identifiers.reject(&:nil?).each do |identifier|
-          result = Core::Serializers::DomainSerializer.resource(
+          result = Serializers::Domain.resource(
             inputs,
-            Core::Models::Domain.where(identifier: identifier)
+            Models::Domain.where(identifier: identifier)
           )
 
           if result[:domains].any?

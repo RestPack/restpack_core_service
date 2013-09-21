@@ -1,4 +1,4 @@
-describe RestPack::Core::Service::Models::Domain do
+describe Models::Domain do
   it { should validate_presence_of(:identifier) }
   it { should validate_presence_of(:application_id) }
   it { should ensure_length_of(:identifier).is_at_most(512) }

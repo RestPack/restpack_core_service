@@ -1,6 +1,6 @@
-require_relative '../../spec_helper'
+require 'spec_helper'
 
-describe Core::Commands::Domain::ByIdentifier do
+describe Commands::Domain::ByIdentifier do
   is_required :identifier
   is_optional :includes
 

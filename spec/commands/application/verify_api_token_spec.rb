@@ -1,6 +1,6 @@
-require_relative '../../spec_helper'
+require 'spec_helper'
 
-describe Core::Commands::Application::VerifyApiToken do
+describe Commands::Application::VerifyApiToken do
   is_required :id, :api_token
 
   let(:response) { subject.class.run(params) }

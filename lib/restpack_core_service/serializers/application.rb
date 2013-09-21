@@ -1,8 +1,8 @@
 module RestPack::Core::Service::Serializers
-  class ApplicationSerializer
+  class Application
     include RestPack::Serializer
 
-    self.model_class = RestPack::Core::Service::Models::Application
+    self.model_class = Models::Application
     self.key = :applications
 
     attributes :id, :name, :account_id
