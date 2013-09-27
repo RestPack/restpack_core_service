@@ -15,7 +15,7 @@ describe Models::Domain do
     end
 
     it "has empty oauth_providers as default" do
-      create(:domain).oauth_providers.should == {}
+      create(:domain).oauth_providers.should == []
     end
 
     it "is not verified" do

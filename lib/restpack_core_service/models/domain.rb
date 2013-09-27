@@ -9,7 +9,7 @@ module RestPack::Core::Service::Models
     belongs_to :application
 
     before_save -> {
-      self.oauth_providers ||= {}
+      self.oauth_providers ||= []
       self.session_secret ||= SecureRandom.hex(16)
     }
   end
