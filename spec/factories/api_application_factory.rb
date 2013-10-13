@@ -1,5 +1,5 @@
 FactoryGirl.define do
-  factory :application_request, class: Hash do
+  factory :api_application, class: Hash do
     sequence(:name) {|n| "Application ##{n}" }
     sequence(:account_id)
 
