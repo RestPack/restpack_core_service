@@ -7,10 +7,7 @@ describe Commands::Application::Create do
     let(:response) { subject.class.run(params) }
 
     context 'with valid params' do
-      let(:application) { {
-        name: 'My Amazing Application',
-        account_id: 12345
-      } }
+      let(:application) { build(:application_request) }
       let(:params) { {
         applications: [application]
       } }
@@ -21,8 +18,8 @@ describe Commands::Application::Create do
         applications = response.result[:applications]
         applications.length.should == 1
 
-        applications.first[:name].should == 'My Amazing Application'
-        applications.first[:account_id].should == 12345
+        applications.first[:name].should == application[:name]
+        applications.first[:account_id].should == application[:account_id]
       end
     end
   end
