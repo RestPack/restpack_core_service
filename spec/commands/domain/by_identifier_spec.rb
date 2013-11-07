@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe Commands::Domain::ByIdentifier do
   is_required :identifier
-  is_optional :includes
+  is_optional :include
 
   let(:response) { subject.class.run(params) }
 
@@ -13,7 +13,7 @@ describe Commands::Domain::ByIdentifier do
   context 'with valid params' do
     let(:params) { {
       identifier: @domain.identifier,
-      includes: 'applications'
+      include: 'applications'
     } }
 
     it 'is valid' do
@@ -33,7 +33,7 @@ describe Commands::Domain::ByIdentifier do
     context 'with subdomain in identifier' do
       let(:params) { {
         identifier: "www.#{@domain.identifier}",
-        includes: 'applications'
+        include: 'applications'
       } }
 
       it 'is valid' do
