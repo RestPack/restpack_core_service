@@ -1,8 +1,8 @@
-module RestPack::Core::Service::Serializers
+module Serializers::Core
   class Domain
     include RestPack::Serializer
 
-    self.model_class = Models::Domain
+    self.model_class = Models::Core::Domain
     self.key = :domains
 
     attributes :id, :identifier, :application_id, :is_verified,

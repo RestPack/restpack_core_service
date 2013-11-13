@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Commands::Application::VerifyApiToken do
+describe Commands::Core::Application::VerifyApiToken do
   is_required :id, :api_token
 
   let(:response) { subject.class.run(params) }

@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Commands::Application::Get do
+describe Commands::Core::Application::Get do
   is_required :id, :account_id
 
   let(:response) { subject.class.run(params) }

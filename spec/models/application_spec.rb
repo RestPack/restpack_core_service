@@ -1,9 +1,8 @@
-describe Models::Application do
+describe Models::Core::Application do
   it { should validate_presence_of(:name) }
   it { should validate_presence_of(:account_id) }
   it { should ensure_length_of(:name).is_at_most(256) }
   it { should have_many(:domains) }
-  it { subject.class.table_name.should == 'restpack_applications' }
 
   context "default values" do
     it "has a random api_token" do

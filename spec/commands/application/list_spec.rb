@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Commands::Application::List do
+describe Commands::Core::Application::List do
   is_required :account_id
   is_optional :page, :page_size
 

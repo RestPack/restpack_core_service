@@ -1,9 +1,8 @@
-describe Models::Domain do
+describe Models::Core::Domain do
   it { should validate_presence_of(:identifier) }
   it { should validate_presence_of(:application_id) }
   it { should ensure_length_of(:identifier).is_at_most(512) }
   it { should belong_to(:application) }
-  it { subject.class.table_name.should == 'restpack_domains' }
 
   context "default values" do
     it "has a random session_secret" do

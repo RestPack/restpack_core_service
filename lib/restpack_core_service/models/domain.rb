@@ -1,6 +1,6 @@
-module RestPack::Core::Service::Models
+module Models::Core
   class Domain < ActiveRecord::Base
-    self.table_name = :restpack_domains
+    self.table_name = :restpack_core_domains
     attr_accessible :identifier, :application_id, :is_verified, :session_secret, :oauth_providers
 
     validates_presence_of :identifier, :application_id

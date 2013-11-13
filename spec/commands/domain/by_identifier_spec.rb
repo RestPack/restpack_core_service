@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Commands::Domain::ByIdentifier do
+describe Commands::Core::Domain::ByIdentifier do
   is_required :identifier
   is_optional :include
 
