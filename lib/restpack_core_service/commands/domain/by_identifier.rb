@@ -1,5 +1,3 @@
-require 'public_suffix'
-
 module Commands::Core::Domain
   class ByIdentifier < RestPack::Service::Command
     required do
@@ -13,7 +11,7 @@ module Commands::Core::Domain
     def execute
       identifiers = [
         inputs[:identifier],
-        get_domain(identifier)
+        without_subdomain(identifier)
       ]
 
       identifiers.reject(&:nil?).each do |identifier|
@@ -32,12 +30,8 @@ module Commands::Core::Domain
 
     private
 
-    def get_domain(identifier)
-      begin
-        PublicSuffix.parse(identifier).domain
-      rescue
-        nil
-      end
+    def without_subdomain(identifier)
+      identifier.split('.')[1..-1].join('.')
     end
   end
 end
