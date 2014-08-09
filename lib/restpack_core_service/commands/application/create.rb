@@ -1,5 +1,5 @@
-module Commands::Core::Application
-  class Create < RestPack::Service::Commands::Create
+module Core::Commands::Application
+  class Create < RestPack::Service::Command
     required do
       array :applications do
         hash do
@@ -9,6 +9,10 @@ module Commands::Core::Application
           end
         end
       end
+    end
+
+    def execute #TODO: GJ: extract to generic command
+      Serializer.serialize Model.create!(inputs[:applications])
     end
   end
 end

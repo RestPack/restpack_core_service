@@ -1,7 +1,5 @@
-require 'spec_helper'
-
-describe Commands::Core::Domain::Create do
-  it_acts_as_create_command(:core, :domain)
+describe Core::Commands::Domain::Create do
+  it_acts_as_create_command
 
   pending 'validate command inputs'
   pending 'test invalid domain formats ("hostname", "no spaces", ip addresses...)'

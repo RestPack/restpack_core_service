@@ -1,7 +1,4 @@
-require 'spec_helper'
-
-describe Commands::Core::Application::Create do
-  it_acts_as_create_command(:core, :application)
-
+describe Core::Commands::Application::Create do
   pending 'validate command inputs'
+  it_acts_as_create_command
 end

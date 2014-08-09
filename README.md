@@ -9,5 +9,6 @@ This gem provides services for managing Applications and Domains.
 ## Development Setup
 
 1. install postgres
-2. create a `restpack_core_service_test` database
-3. rake
+2. `bundle install`
+3. `rake db:create`
+4. `rake test`

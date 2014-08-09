@@ -1,4 +1,4 @@
-module Commands::Core::Domain
+module Core::Commands::Domain
   class Update < RestPack::Service::Command
     required do
       array :domains do
