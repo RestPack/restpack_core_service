@@ -1,4 +1,4 @@
-module Commands::Core::Application
+module Core::Commands::Application
   class VerifyApiToken < RestPack::Service::Command
     required do
       integer :id
@@ -6,7 +6,7 @@ module Commands::Core::Application
     end
 
     def execute
-      application = Models::Core::Application.find_by_id_and_api_token(
+      application = Model.find_by_id_and_api_token(
         inputs[:id],
         inputs[:api_token]
       )

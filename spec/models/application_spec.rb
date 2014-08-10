@@ -1,4 +1,4 @@
-describe Models::Core::Application do
+describe Core::Models::Application do
   it { should validate_presence_of(:name) }
   it { should validate_presence_of(:account_id) }
   it { should ensure_length_of(:name).is_at_most(256) }
@@ -9,8 +9,8 @@ describe Models::Core::Application do
       app1 = create(:application)
       app2 = create(:application)
 
-      app1.api_token.length.should == 32
-      app1.api_token.should_not == app2.api_token
+      expect(app1.api_token.length).to eq(32)
+      expect(app1.api_token).to_not eq(app2.api_token)
     end
   end
 end

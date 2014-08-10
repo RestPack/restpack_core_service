@@ -1,6 +1,4 @@
-require 'spec_helper'
-
-describe Commands::Core::Application::Get do
+describe Core::Commands::Application::Get do
   is_required :id, :account_id
 
   let(:response) { subject.class.run(params) }
@@ -17,12 +15,12 @@ describe Commands::Core::Application::Get do
     } }
 
     it 'is valid' do
-      response.success?.should == true
+      expect(response.success?).to eq(true)
     end
 
     it 'return the application' do
-      response.result[:applications].length.should == 1
-      response.result[:applications].first[:id].should == @application.id.to_s
+      expect(response.result[:applications].length).to eq(1)
+      expect(response.result[:applications].first[:id]).to eq(@application.id.to_s)
     end
   end
 end

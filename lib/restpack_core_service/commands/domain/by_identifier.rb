@@ -1,4 +1,4 @@
-module Commands::Core::Domain
+module Core::Commands::Domain
   class ByIdentifier < RestPack::Service::Command
     required do
       string :identifier
@@ -15,9 +15,9 @@ module Commands::Core::Domain
       ]
 
       identifiers.reject(&:nil?).each do |identifier|
-        result = Serializers::Core::Domain.resource(
+        result = Serializer.resource(
           inputs,
-          Models::Core::Domain.where(identifier: identifier)
+          Model.where(identifier: identifier)
         )
 
         if result[:domains].any?

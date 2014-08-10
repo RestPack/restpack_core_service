@@ -1,4 +1,4 @@
-describe Models::Core::Domain do
+describe Core::Models::Domain do
   it { should validate_presence_of(:identifier) }
   it { should validate_presence_of(:application_id) }
   it { should ensure_length_of(:identifier).is_at_most(512) }
@@ -9,16 +9,16 @@ describe Models::Core::Domain do
       domain1 = create(:domain)
       domain2 = create(:domain)
 
-      domain1.session_secret.should_not == nil
-      domain1.session_secret.should_not == domain2.session_secret
+      expect(domain1.session_secret).to_not eq(nil)
+      expect(domain1.session_secret).to_not eq(domain2.session_secret)
     end
 
     it "has empty oauth_providers as default" do
-      create(:domain).oauth_providers.should == []
+      expect(create(:domain).oauth_providers).to eq([])
     end
 
     it "is not verified" do
-      create(:domain).is_verified.should == false
+      expect(create(:domain).is_verified).to eq(false)
     end
   end
 end

@@ -1,5 +1,5 @@
 FactoryGirl.define do
-  factory :domain, :class => Models::Core::Domain do
+  factory :domain, :class => Core::Models::Domain do
     application
     sequence(:identifier) {|n| "domain_#{n}.com" }
   end

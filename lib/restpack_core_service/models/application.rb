@@ -1,4 +1,4 @@
-module Models::Core
+module Core::Models
   class Application < ActiveRecord::Base
     self.table_name = :restpack_core_applications
     attr_accessible :name, :account_id
