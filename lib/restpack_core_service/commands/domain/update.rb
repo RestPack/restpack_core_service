@@ -1,5 +1,5 @@
 module Core::Commands::Domain
-  class Update < RestPack::Service::Command
+  class Update < RestPack::Service::Commands::Update
     required do
       array :domains do
         hash do
@@ -23,26 +23,10 @@ module Core::Commands::Domain
       end
     end
 
-    def execute
-      #TODO: GJ: wrap in transaction
-      result = {
-        domains: []
-      }
+    private
 
-      inputs[:domains].each do |domain_inputs|
-        domain = Models::Core::Domain.find_by_id_and_application_id(
-          domain_inputs[:id], domain_inputs[:application_id]
-        )
-
-        if domain
-          domain.update_attributes(domain_inputs)
-          result[:domains] << Serializers::Core::Domain.as_json(domain)
-        else
-          status :not_found
-        end
-      end
-
-      return result
+    def find_model(model_inputs)
+      self.class.model_class.find model_inputs.slice(:id, :application_id)
     end
   end
 end
