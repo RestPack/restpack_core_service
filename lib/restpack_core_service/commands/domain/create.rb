@@ -1,5 +1,5 @@
 module Core::Commands::Domain
-  class Create < RestPack::Service::Command
+  class Create < RestPack::Service::Commands::Create
     required do
       array :domains do
         hash do
@@ -9,10 +9,6 @@ module Core::Commands::Domain
           end
         end
       end
-    end
-
-    def execute #TODO: GJ: extract to generic command
-      Serializer.serialize Model.create!(inputs[:domains])
     end
   end
 end
