@@ -27,4 +27,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "bump"
   spec.add_development_dependency "shoulda-matchers"
   spec.add_development_dependency "factory_girl"
+  spec.add_development_dependency "pry"
 end
